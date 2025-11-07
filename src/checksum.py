@@ -1,6 +1,8 @@
 def modulo11_checksum(isbn_number: str):
 
     digits = [int(char) for char in isbn_number if char.isdigit()]
+    if len(digits) != 10:
+        return False
 
     check_digit = digits[-1]
 
