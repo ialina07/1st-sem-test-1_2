@@ -10,5 +10,5 @@ def modulo11_checksum(isbn_number: str):
         digit = digits[i]
         total += digit * weight
 
-    checksum = total + check_digit
-    return checksum % 11 == 0
+    expected_check_digit = (11 - (total % 11)) % 11
+    return check_digit == expected_check_digit
